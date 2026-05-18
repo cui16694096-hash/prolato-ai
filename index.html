@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ProLATO - 流程工业AI咨询平台，为化工、有色矿山、食品饮料等行业提供知识问答、数字化方案编写、架构设计、供应商验证等AI咨询服务">
+    <meta name="keywords" content="AI咨询,流程工业,数字化,化工,有色矿山,食品饮料">
+    <title>ProLATO - 流程工业AI咨询平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 左侧行业菜单 -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-pro">Pro</span><span class="logo-lato">LATO</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="切换菜单">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12h18M3 6h18M3 18h18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="industry-nav">
+                <div class="nav-section">
+                    <h3 class="nav-section-title">第一阶段</h3>
+                    <ul class="industry-list">
+                        <li class="industry-item active" data-industry="chemical">
+                            <span class="industry-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                                </svg>
+                            </span>
+                            <span class="industry-name">化工行业</span>
+                        </li>
+                        <li class="industry-item" data-industry="mining">
+                            <span class="industry-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"/>
+                                </svg>
+                            </span>
+                            <span class="industry-name">有色矿山行业</span>
+                        </li>
+                        <li class="industry-item" data-industry="food">
+                            <span class="industry-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/>
+                                </svg>
+                            </span>
+                            <span class="industry-name">食品饮料行业</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="nav-section-title">第二阶段</h3>
+                    <ul class="industry-list">
+                        <li class="industry-item" data-industry="solar">
+                            <span class="industry-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/>
+                                    <circle cx="12" cy="12" r="4"/>
+                                </svg>
+                            </span>
+                            <span class="industry-name">玻璃光伏行业</span>
+                            <span class="badge-soon">即将上线</span>
+                        </li>
+                        <li class="industry-item" data-industry="steel">
+                            <span class="industry-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 22h14a2 2 0 002-2V7.5L14.5 2H6a2 2 0 00-2 2v4"/>
+                                    <path d="M14 2v6h6M2 15h10M5 12v6"/>
+                                </svg>
+                            </span>
+                            <span class="industry-name">钢铁行业</span>
+                            <span class="badge-soon">即将上线</span>
+                        </li>
+                        <li class="industry-item" data-industry="pharma">
+                            <span class="industry-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                </svg>
+                            </span>
+                            <span class="industry-name">制药行业</span>
+                            <span class="badge-soon">即将上线</span>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="model-info">
+                    <span class="model-dot"></span>
+                    <span class="model-name">ProLATO-1.0</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 顶部角色选择 -->
+            <header class="top-bar">
+                <div class="role-selector">
+                    <span class="role-label">当前角色</span>
+                    <div class="role-tabs">
+                        <button class="role-tab active" data-role="owner">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            企业老板
+                        </button>
+                        <button class="role-tab" data-role="executive">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+                            </svg>
+                            决策层
+                        </button>
+                        <button class="role-tab" data-role="manager">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                            </svg>
+                            部门管理者
+                        </button>
+                        <button class="role-tab" data-role="operator">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                            一线操作员工
+                        </button>
+                    </div>
+                </div>
+                <div class="top-actions">
+                    <button class="btn-icon" title="新对话" id="newChatBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <!-- 对话区域 -->
+            <div class="chat-container" id="chatContainer">
+                <!-- 欢迎页面 -->
+                <div class="welcome-screen" id="welcomeScreen">
+                    <div class="welcome-content">
+                        <h1 class="welcome-title">
+                            <span class="logo-pro">Pro</span><span class="logo-lato">LATO</span>
+                        </h1>
+                        <p class="welcome-subtitle">流程工业AI咨询专家</p>
+                        <p class="welcome-desc">选择左侧行业与上方角色，开启您的专属AI咨询体验</p>
+
+                        <div class="task-types">
+                            <div class="task-card" data-task="qa">
+                                <div class="task-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                    </svg>
+                                </div>
+                                <h3 class="task-title">知识问答</h3>
+                                <p class="task-desc">行业知识、标准规范、最佳实践智能解答</p>
+                            </div>
+                            <div class="task-card" data-task="solution">
+                                <div class="task-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                        <line x1="16" y1="13" x2="8" y2="13"/>
+                                        <line x1="16" y1="17" x2="8" y2="17"/>
+                                        <polyline points="10 9 9 9 8 9"/>
+                                    </svg>
+                                </div>
+                                <h3 class="task-title">数字化解决方案编写</h3>
+                                <p class="task-desc">量身定制的数字化转型方案与实施路径</p>
+                            </div>
+                            <div class="task-card" data-task="architecture">
+                                <div class="task-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="7" height="7"/>
+                                        <rect x="14" y="3" width="7" height="7"/>
+                                        <rect x="14" y="14" width="7" height="7"/>
+                                        <rect x="3" y="14" width="7" height="7"/>
+                                    </svg>
+                                </div>
+                                <h3 class="task-title">架构设计</h3>
+                                <p class="task-desc">系统架构、数据架构、技术栈规划与设计</p>
+                            </div>
+                            <div class="task-card" data-task="validate">
+                                <div class="task-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 11l3 3L22 4"/>
+                                        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                                    </svg>
+                                </div>
+                                <h3 class="task-title">供应商方案验证</h3>
+                                <p class="task-desc">供应商技术方案评估、风险识别与优化建议</p>
+                            </div>
+                        </div>
+
+                        <div class="quick-prompts">
+                            <p class="quick-label">快速提问</p>
+                            <div class="prompt-chips">
+                                <button class="prompt-chip" data-prompt="如何制定化工行业的数字化转型路线图？">如何制定化工行业的数字化转型路线图？</button>
+                                <button class="prompt-chip" data-prompt="有色矿山行业智能选矿系统的关键技术有哪些？">有色矿山行业智能选矿系统的关键技术有哪些？</button>
+                                <button class="prompt-chip" data-prompt="食品饮料行业的MES系统如何与ERP集成？">食品饮料行业的MES系统如何与ERP集成？</button>
+                                <button class="prompt-chip" data-prompt="帮我设计一个数字化工厂的IT/OT融合架构">帮我设计一个数字化工厂的IT/OT融合架构</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 消息列表 -->
+                <div class="messages-list" id="messagesList"></div>
+            </div>
+
+            <!-- 输入区域 -->
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <div class="input-context" id="inputContext">
+                        <span class="context-industry" id="contextIndustry">化工行业</span>
+                        <span class="context-divider">·</span>
+                        <span class="context-role" id="contextRole">企业老板</span>
+                    </div>
+                    <div class="input-box">
+                        <textarea
+                            id="messageInput"
+                            class="message-input"
+                            placeholder="请输入您的咨询需求..."
+                            rows="1"
+                        ></textarea>
+                        <button class="send-btn" id="sendBtn" disabled>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="input-hint">ProLATO 可能生成不准确的信息，请核实重要信息。</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
